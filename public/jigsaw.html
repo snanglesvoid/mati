@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Hallo Mati ;)</title> 
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+        </script>
+        <script src='/jQueryColor.js'></script>
+        <script src="/snapfit.js"></script>
+        <script src='/jigsaw.js'></script>
+        <style>
+            html {
+                touch-action: manipulation;
+            }
+            body {
+                background: black;
+                /* font-family: 'Orbitron', sans-serif; */
+                font-family: 'Major Mono Display' 'monospace';
+            }
+            
+            .timer {
+                width: 400px;
+                text-align: center;
+                color: rgba(255, 255, 255, 0.5);
+                transform: translateX(-50%);
+                margin-left: 50%;
+                font-family: 'Major Mono Display', monospace;
+
+            }
+            .timer h3 {
+                font-size: 3rem;
+                font-weight: 100;
+            }
+            * {
+                outline: none !important;
+                -webkit-touch-callout: none; /* iOS Safari */
+                    -webkit-user-select: none; /* Safari */
+                    -khtml-user-select: none; /* Konqueror HTML */
+                    -moz-user-select: none; /* Firefox */
+                        -ms-user-select: none; /* Internet Explorer/Edge */
+                            user-select: none; /* Non-prefixed version, currently
+                                                supported by Chrome and Opera */
+            }
+            ::selection {
+                background: transparent;
+            }
+
+            .puzzle {
+                width: 100%;
+            }
+            .puzzle img {
+                width: 100%;
+            }
+
+        </style>
+    </head>
+    <body>
+
+    <div class="puzzle">
+        <img src="https://farm7.staticflickr.com/6140/5958084943_5d0a1c141f_n.jpg" onload="snapfit.add(this)">
+    </div>
+        
+    </body>
+</html>

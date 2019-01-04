@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <title>Hallo Mati ;)</title> 
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+        </script>
+        <script src='/jQueryColor.js'></script>
+        <script src="https://unpkg.com/packery@2/dist/packery.pkgd.js"></script>
+        <script src='/slider.js'></script>
+        <style>
+            html {
+                touch-action: manipulation;
+            }
+            body {
+                background: black;
+                /* font-family: 'Orbitron', sans-serif; */
+                font-family: 'Major Mono Display' 'monospace';
+            }
+            .puzzle {
+                transform: translateX(-50%);
+                margin-left: 50%;
+                padding: 10px;
+            }
+            .tile {
+                width: 0;
+                height: 0;
+                border: 1px solid #999;
+                margin-right: 2px;
+                margin-bottom: 2px;
+                line-height: 0;
+                border-radius: 2px;
+                overflow: hidden;
+                color: rgba(255, 255, 255, 0.0);
+                background: url(https://farm7.staticflickr.com/6140/5958084943_5d0a1c141f_n.jpg);
+                /* background: url(https://freeios7.com/download/freeios7.com_apple_wallpaper_minion-hitman_ipad.jpg); */
+                text-align: center;
+                font-weight: 100;
+                text-transform: uppercase;
+                display: inline-block;
+                box-sizing: border-box;
+                -webkit-box-shadow: 1px 1px 3px 0px rgba(255,255,255,0.5);
+                -moz-box-shadow: 1px 1px 3px 0px rgba(255,255,255,0.5);
+                box-shadow: 1px 1px 3px 0px rgba(255,255,255,0.5);
+                font-size: 1rem;
+                transition: all .3s ease;
+            }
+            .tile:hover {
+                border: 1px solid #FFF;
+                -webkit-box-shadow: 1px 1px 5px 0px rgba(255,255,255,0.8);
+                -moz-box-shadow: 1px 1px 5px 0px rgba(255,255,255,0.8);
+                box-shadow: 1px 1px 5px 0px rgba(255, 255, 255, 0.8);
+            }
+            .empty {
+                opacity: 0;
+                box-shadow: none;
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
+            }
+            .timer {
+                width: 400px;
+                text-align: center;
+                color: rgba(255, 255, 255, 0.5);
+                transform: translateX(-50%);
+                margin-left: 50%;
+                font-family: 'Major Mono Display', monospace;
+
+            }
+            .timer h3 {
+                font-size: 3rem;
+                font-weight: 100;
+            }
+            * {
+                outline: none !important;
+                -webkit-touch-callout: none; /* iOS Safari */
+                    -webkit-user-select: none; /* Safari */
+                    -khtml-user-select: none; /* Konqueror HTML */
+                    -moz-user-select: none; /* Firefox */
+                        -ms-user-select: none; /* Internet Explorer/Edge */
+                            user-select: none; /* Non-prefixed version, currently
+                                                supported by Chrome and Opera */
+            }
+            ::selection {
+                background: transparent;
+            }
+
+            .cat {
+                background: url(http://31.media.tumblr.com/bce8ab31e15720046985d91e1801af18/tumblr_mrd6z6guyu1qzuhkbo1_1280.gif);
+                position: fixed;
+                bottom: 0;
+                left: -100%;
+                width: 180px;
+                height: 150px;
+                overflow: hidden;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                background-size: 180px;
+                background-position: center center;
+                border-radius: 12px;
+            }
+        </style>
+    </head>
+    <body>
+
+    <div class="puzzle">
+
+    </div>
+
+    <div class="timer">
+        <h3></h3>
+    </div>
+
+    <div class="cat">
+
+    </div>
+        
+    </body>
+</html>
