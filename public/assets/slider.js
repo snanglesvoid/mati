@@ -88,8 +88,17 @@ $(function() {
         }, 2000)
         $('.empty').animate({
             opacity: 1
-        }, 1000)
+        }, 1000, function() {
+            $tiles.css({
+                '-webkit-filter': 'hue-roate(0) saturate(20%)', /* Safari 6.0 - 9.0 */
+                filter: 'hue-rotate(0) saturate(20%)',
+            })
+            $('.solution').animate({
+                opacity: 1
+            }, 2000)
+        })
         clearInterval(timer)
+        stopTimerBlink()
     }
     function coordinates(tile) {
         let i = $tiles.index(tile)
@@ -142,6 +151,11 @@ $(function() {
                         stopTimerBlink()
                         $tiles.unbind('click')
                         time = 0
+                        let x = getRandomInt(300) + 30
+                        $tiles.css({
+                            filter : `hue-rotate(${x}deg)`,
+                            '-webkit-filter' : `hue-rotate(${x}deg)`,
+                        })
                         shuffle()
                     }
                 }, 1000)
@@ -165,21 +179,38 @@ $(function() {
         console.log('resize')
         
         let width = Math.min(1000, Math.min($(window).height(), $(window).width()))
-        let tileWidth = Math.floor((width-20) / size)
+        // let tileWidth = Math.floor((width-20) / size)
+        let tileWidthPercent = 100.0 / size
         $('.puzzle').css({
-            width: width + 'px',
-            height: width + 'px',
+            // width: width + 'px',
+            // height: width + 'px',
+            width: '100vw',
+            height: '100vw',
+            padding: '.5vw',
+            display: 'flex',
+            'max-width': '640px',
+            'max-height' : '640px',
+            'flex-wrap': 'wrap'
         })
+        let isMaxWidth = $('.puzzle').width() >= 640
         $('.timer').css({
             width: width + 'px',
         })
         $tiles.css({
-            width: tileWidth - 2 + 'px',
-            height: tileWidth - 2 + 'px',
-            'line-height': tileWidth - 4 + 'px',
+            // width: tileWidth - 2 + 'px',
+            // height: tileWidth - 2 + 'px',
+            // 'line-height': tileWidth - 4 + 'px',
+            // width: tileWidthPercent + 'vw',
+            flex: `1 0 ${tileWidthPercent - 3}%`,
+            height: tileWidthPercent - 1 + 'vw',
+            'max-width': Math.floor(640/size) + 'px',
+            'max-height': Math.floor(640/size) + 'px',
+            'line-height' : tileWidthPercent + 'vw',
         })
+        let tileWidthPx = $($tiles.get(0)).width()
         $tiles.css({
-            'background-size': size * tileWidth + 'px'
+            // 'background-size': size * tileWidthPx + 'px'
+            'background-size' : isMaxWidth ? '640px' : '100vw'
         })
     }
 
@@ -219,7 +250,7 @@ $(function() {
             
             setTimeout(function() {
                 $cat.css({'display' : 'none'})
-                $('.tile:not(.empty)').css({color: 'rgba(255,255,255,0.5)'})
+                $('.tile:not(.empty)').css({color: 'rgba(255,255,255,0.9)'})
                 $('.tile:not(.empty)').animate({
                     opacity: 1
                 }, 1500)
@@ -227,13 +258,15 @@ $(function() {
         })
     }
     function runCat() {
+        let invert = getRandomInt(100) < 50
         $cat.css({
-            bottom: 0,
-            left: '-120px'
+            bottom: getRandomInt(140) + 'px',
+            left: invert ? $(window).width() + 120 + 'px' : '-120px',
+            transform: invert ? 'scaleX(-1)' : '',
         })
         $cat.animate({
-            bottom: '100px',
-            left: $(window).width() + 120 + 'px'
+            bottom: getRandomInt(140) + 'px',
+            left: invert ? '-120px' : $(window).width() + 120 + 'px',
         }, 3500)
     }
     initCat()
@@ -262,4 +295,7 @@ $(function() {
         $('.timer h3').css('color', 'rgba(255,255,255,0.5)')
         blinking = false
     }
+
+    window.win = win
+    window.runCat = runCat
 })

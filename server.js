@@ -29,14 +29,43 @@ function sendSliderPuzzle(imageUrl, catUrl, difficulty, solution, time, response
 
 app.get('/codeword', (req, res) => {
     let q = req.query['q']
-    if (q == 'IAmMati') {
-        // res.sendFile(path.join(__dirname, '/public/slider.html'))
+    if (q == '1') {
         sendSliderPuzzle(
-            "https://farm7.staticflickr.com/6140/5958084943_5d0a1c141f_n.jpg",
+            "/img/1.jpg",
             "http://31.media.tumblr.com/bce8ab31e15720046985d91e1801af18/tumblr_mrd6z6guyu1qzuhkbo1_1280.gif",
+            3,
+            'This is the Solution',
+            90,
+            res
+        )
+    }
+    else if (q == '2') {
+        sendSliderPuzzle(
+            "/img/2.jpg",
+            "https://media.giphy.com/media/7lsw8RenVcjCM/giphy.gif",
+            4,
+            'This is the Solution',
+            3*60,
+            res
+        )
+    }
+    else if (q == '3') {
+        sendSliderPuzzle(
+            "/img/3.jpg",
+            "https://media.giphy.com/media/yqMtk0TfjRa5W/giphy.gif",
             4,
             'This is the Solution',
             4*60,
+            res
+        )
+    }
+    else if (q == '4') {
+        sendSliderPuzzle(
+            "/img/4.jpg",
+            "https://33.media.tumblr.com/17ffd65788d459e6591e5aade7a5b24d/tumblr_nwr7rtfzyt1ske259o1_500.gif",
+            5,
+            'This is the Solution',
+            5*60,
             res
         )
     }

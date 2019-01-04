@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Hallo Mati ;)</title> 
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
         <script
@@ -16,6 +16,8 @@
                 touch-action: manipulation;
             }
             body {
+                margin-top: 0;
+                overflow: hidden;
                 background: black;
                 /* font-family: 'Orbitron', sans-serif; */
                 font-family: 'Major Mono Display' 'monospace';
@@ -29,23 +31,23 @@
                 width: 0;
                 height: 0;
                 border: 1px solid #999;
-                margin-right: 2px;
-                margin-bottom: 2px;
+                margin: .5vw;
                 line-height: 0;
-                border-radius: 2px;
+                border-radius: 3px;
                 overflow: hidden;
-                color: rgba(255, 255, 255, 0.0);
+                color: rgba(0, 0, 0, 0.0);
                 background: url(#imageUrl);
                 text-align: center;
-                font-weight: 100;
+                /* font-weight: 100; */
                 text-transform: uppercase;
                 display: inline-block;
                 box-sizing: border-box;
                 -webkit-box-shadow: 1px 1px 3px 0px rgba(255,255,255,0.5);
                 -moz-box-shadow: 1px 1px 3px 0px rgba(255,255,255,0.5);
                 box-shadow: 1px 1px 3px 0px rgba(255,255,255,0.5);
-                font-size: 1rem;
-                transition: all .3s ease;
+                transition: all .3s ease, filter 1s linear, border-radius 1s ease;
+                font-size: 1.5rem;
+                font-weight: 100;
             }
             .tile:hover {
                 border: 1px solid #FFF;
@@ -60,7 +62,7 @@
                 -webkit-box-shadow: none;
             }
             .timer {
-                width: 400px;
+                width: 100vw;
                 text-align: center;
                 color: rgba(255, 255, 255, 0.5);
                 transform: translateX(-50%);
@@ -99,6 +101,17 @@
                 background-size: 180px;
                 background-position: center center;
                 border-radius: 12px;
+            }
+            .solution {
+                font-size: 1.8rem;
+                position: fixed;
+                top: 150px;
+                right: 0;
+                left: 0;
+                opacity: 0;
+                color: rgba(255, 255, 255, 1);
+                text-align: center;
+                pointer-events: none;
             }
         </style>
     </head>
