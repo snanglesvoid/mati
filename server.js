@@ -5,6 +5,6 @@ const app = express()
 
 app.use(express.static('public'))
 
-app.listen(3004, () => {
-    console.log('listening on port 3004')
+app.listen(4100, () => {
+    console.log('listening on port 4100')
 })
