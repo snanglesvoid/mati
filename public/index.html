@@ -1,11 +1,75 @@
 <html>
     <head>
+        <title>No!</title> 
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+        </script>
+        <script src='/jQueryColor.js'></script>
+        <style>
+            html {
+                touch-action: manipulation;
+            }
+            body {
+                background: black;
+                /* font-family: 'Orbitron', sans-serif; */
+                font-family: 'Major Mono Display' 'monospace';
+            }
+           
+            * {
+                outline: none !important;
+                -webkit-touch-callout: none; /* iOS Safari */
+                    -webkit-user-select: none; /* Safari */
+                    -khtml-user-select: none; /* Konqueror HTML */
+                    -moz-user-select: none; /* Firefox */
+                        -ms-user-select: none; /* Internet Explorer/Edge */
+                            user-select: none; /* Non-prefixed version, currently
+                                                supported by Chrome and Opera */
+            }
+            ::selection {
+                background: transparent;
+            }
 
+            input.codeword {
+                background: transparent;
+                width: calc(100% - 48px);
+                color: white;
+                line-height: 3rem;
+                font-size: 1.5rem;
+                text-align: center;
+                margin-left: 24px;
+                margin-right: 24px;
+                margin-bottom: 24px;
+                border-color: rgba(255,255,255,0.4);
+            }
+            button.go {
+                background: transparent;
+                border: none;
+                color: green;
+                width: 100%;
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin-top: 12px;
+                cursor: pointer;
+            }
+        </style>
+
+        <script>
+            $(function() {
+                $('.go').click(function() {
+                    window.location.href = '/codeword?q=' + $('.codeword').val()
+                })
+            })
+        </script>
     </head>
     <body>
-        <ul>
-            <li><a href="/jigsaw.html">jigsaw</a></li>
-            <li><a href="/slider.html">slider</a></li>
-        </ul>
+        <br><br>
+        <input type="text" class='codeword'>
+        <button class='go'>Go!</button>
     </body>
 </html>

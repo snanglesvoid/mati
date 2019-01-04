@@ -1,9 +1,10 @@
 $(function() {
     console.log('hello mati')
 
-    let size = 6
+    let size = +($('.difficulty').attr('difficulty'))
     let timer
     let time = 0
+    let maxTime = +($('.time').attr('time'))
     window._time = time
 
     let $tiles = $('.tile')
@@ -134,10 +135,10 @@ $(function() {
                     if (time % 45 == 0) {
                         runCat()
                     }
-                    if (time == 4*60) {
+                    if (time == maxTime - 60) {
                         startTimerBlink()
                     }
-                    if (time == 5*60) {
+                    if (time == maxTime) {
                         stopTimerBlink()
                         $tiles.unbind('click')
                         time = 0

@@ -10,7 +10,6 @@
             crossorigin="anonymous">
         </script>
         <script src='/jQueryColor.js'></script>
-        <script src="https://unpkg.com/packery@2/dist/packery.pkgd.js"></script>
         <script src='/slider.js'></script>
         <style>
             html {
@@ -36,8 +35,7 @@
                 border-radius: 2px;
                 overflow: hidden;
                 color: rgba(255, 255, 255, 0.0);
-                background: url(https://farm7.staticflickr.com/6140/5958084943_5d0a1c141f_n.jpg);
-                /* background: url(https://freeios7.com/download/freeios7.com_apple_wallpaper_minion-hitman_ipad.jpg); */
+                background: url(#imageUrl);
                 text-align: center;
                 font-weight: 100;
                 text-transform: uppercase;
@@ -89,7 +87,7 @@
             }
 
             .cat {
-                background: url(http://31.media.tumblr.com/bce8ab31e15720046985d91e1801af18/tumblr_mrd6z6guyu1qzuhkbo1_1280.gif);
+                background: url(#catUrl);
                 position: fixed;
                 bottom: 0;
                 left: -100%;
@@ -112,11 +110,18 @@
 
     <div class="timer">
         <h3></h3>
+        <div style='display:none;' class='time' time='#time'></div>
     </div>
 
     <div class="cat">
 
     </div>
+
+    <div class="solution">
+        <h3>#solution</h3>
+    </div>
+
+    <div class='difficulty' difficulty='#difficulty' style='display: none;'></div>
         
     </body>
 </html>
