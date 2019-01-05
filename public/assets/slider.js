@@ -93,6 +93,9 @@ $(function() {
                 '-webkit-filter': 'hue-roate(0) saturate(20%)', /* Safari 6.0 - 9.0 */
                 filter: 'hue-rotate(0) saturate(20%)',
             })
+            $tiles.animate({
+                opacity: 0.5
+            }, 2000)
             $('.solution').animate({
                 opacity: 1
             }, 2000)
